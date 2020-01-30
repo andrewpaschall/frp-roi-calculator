@@ -49,7 +49,6 @@ class App extends Component {
                           </div>
                           <div className="medium-4 cell">
                             <CurrencyInput change={this.hourlyRateHandler} />
-                              {/* <input id="hourly_rate" onChange={this.hourlyRateHandler} type="number"/> */}
                           </div>
                       </div>
                   </div>
