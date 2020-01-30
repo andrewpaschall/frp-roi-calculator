@@ -22,21 +22,6 @@ class App extends Component {
 
     return (
       <div className="roiCalculator">  
-
-            {/*hero*/}
-              <header className="hero-section">
-                  <div className="grid-container">
-                      <div className="grid-x align-bottom">
-                          <div className="medium-6 cell">
-                              <h1>FRP vs. Hollow Metal</h1>
-                          </div>
-                          <div className="medium-6 cell">
-                              <img src="https://special-lite.com/wp-content/uploads/2020/01/boxing-ring.svg" alt="" />
-                          </div>
-                      </div>
-                  </div>
-              </header>
-
               {/*Labor Cost*/}
               <section className="labor-cost">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.42 70.71" width="30" height="30"><g><g><polygon style={{fill: '#617088'}} points="70.71 70.71 0 0 141.42 0 70.71 70.71"/></g></g></svg>
