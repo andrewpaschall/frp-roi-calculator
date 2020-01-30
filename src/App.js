@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Site.css';
 import './App.css';
 import Stat from './Stat/Stat';
-import CurrencyInput from './CurrencyInput.js';
+import CurrencyInput from './CurrencyInput';
+
 
 class App extends Component {
 
