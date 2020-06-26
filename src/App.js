@@ -3,6 +3,7 @@ import './Site.css';
 import './App.css';
 import Stat from './Stat/Stat';
 import CurrencyInput from './CurrencyInput';
+import SignUp from './SignUp/SignUp';
 
 
 class App extends Component {
@@ -188,6 +189,8 @@ class App extends Component {
                       </div>
                   </div>
               </section>
+              <SignUp></SignUp>
+              
       </div>
     );
   }
