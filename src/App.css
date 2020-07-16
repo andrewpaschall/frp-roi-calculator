@@ -165,7 +165,7 @@ section.pay-off {
 .hero-section h1 {
     line-height: 1.1;
     font-size: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: .25em;
     position: relative;
     z-index: 10;
 }
