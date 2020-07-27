@@ -177,3 +177,9 @@ section.pay-off {
 }
 
 .cls-1{fill:none;}.cls-2{fill:#d49f0f;}.cls-3{clip-path:url(#clip-path);}.cls-4,.cls-5{fill:#fff;}.cls-5{fill-rule:evenodd;}
+
+/** .slide styling **/
+.slide {
+    width: 100%;
+    padding: 2em;
+}

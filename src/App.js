@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Site.css';
 import './App.css';
 import Stat from './Stat/Stat';
-import CurrencyInput from './CurrencyInput';
 import SignUp from './SignUp/SignUp';
 import Hero from './Hero/Hero';
 import Slide from './SlideInput';
@@ -20,6 +19,12 @@ class App extends Component {
     })
   }
 
+  timeInputHandler = (event) => {
+    this.setState({
+      timeInput: event.target.value
+    })
+  }
+
   
 
   render(){
@@ -34,14 +39,21 @@ class App extends Component {
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.42 70.71" width="30" height="30"><g><g><polygon style={{fill: '#617088'}} points="70.71 70.71 0 0 141.42 0 70.71 70.71"/></g></g></svg>
                   <div className="grid-container">
                       <div className="grid-x grid-padding-x align-center text-center">
-                          <div className="cell">
-                              <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Enter your info below and see for yourself!</h3>
-                              <h2>What is Your Cost of Labor?</h2>
-                              <h3>Please enter your hourly labor cost on the line below</h3>
-                          </div>
-                          <div className="medium-4 cell">
-                            <CurrencyInput change={this.hourlyRateHandler} />
-                          </div>
+                        <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Enter your info below and see for yourself!</h3>
+                          <Slide data="Currency">
+                              <h2>Answer Question 1</h2>
+                              <h3>Do this action</h3>
+                          </Slide>
+
+                          <Slide data="">
+                            <h2>Answer Question 2</h2>
+                            <h3>Do that action</h3>
+                          </Slide>
+
+                          <Slide data="">
+                            <h2>Answer Question 3</h2>
+                            <h3>Do those actions</h3>
+                          </Slide>
                       </div>
                   </div>
               </section>
