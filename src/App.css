@@ -183,3 +183,14 @@ section.pay-off {
     width: 100%;
     padding: 2em;
 }
+
+
+/** .sign-um styling **/
+.sign-up {
+    padding: 7rem 0;
+}
+
+.sign-up hr {
+    width: 5%;
+    border: 1px solid #fefefe;
+}
