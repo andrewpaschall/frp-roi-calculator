@@ -9,8 +9,9 @@ const signUp = (props) => {
     return(
         <section className="sign-up">
                 <div className="grid-container">
-                  <h2 className="text-center">Learn More About Special-Lite</h2>
+                  <h2 className="text-center">Keep in Touch</h2>
                   <hr></hr>
+                  <h3 className="text-center">Sign up below for the latest news, product&nbsp;releases,&nbsp;and&nbsp;more</h3>
                   <form className="js-cm-form grid-x" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1ACD56C5311688EC04D43D634003A62F6B815AC91A48D863CAB75843975B4F725B95BBCE3B19AD113F206275E4ABF03977">
                     <div className="cell">
                       <div>
