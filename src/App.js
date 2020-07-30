@@ -25,6 +25,12 @@ class App extends Component {
     })
   }
 
+  frequencyInputHandler = (event) => {
+    this.setState({
+      frequencyInput: event.target.value
+    })
+  }
+
   
 
   render(){
