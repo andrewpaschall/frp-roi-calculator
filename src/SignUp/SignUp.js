@@ -21,7 +21,8 @@ const signUp = (props) => {
                       <div>
                         <div>
                           <div>
-                            <input aria-required="" id="cm-privacy-consent" name="cm-privacy-consent" required="" type="checkbox" />
+                            {//<input aria-required="" id="cm-privacy-consent" name="cm-privacy-consent" required="" type="checkbox" />
+                            }
                             <label htmlFor="cm-privacy-consent">I agree to receive email communications from Special-Lite.</label>
                           </div>
                           <input id="cm-privacy-consent-hidden" name="cm-privacy-consent-hidden" type="hidden" value="true"/>

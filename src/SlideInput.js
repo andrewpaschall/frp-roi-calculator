@@ -2,6 +2,7 @@ import React from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
+
 const defaultMaskOptions = {
     prefix: '',
     suffix: '',
@@ -25,27 +26,6 @@ const currencyMaskOptions = {
     allowNegative: false,
     allowLeadingZeroes: false,
 }
-
-// function Slide(props) {
-//     let dataType = props.data;
-//     const defaultMask = createNumberMask(defaultMaskOptions);
-//     const currencyMask = createNumberMask(currencyMaskOptions);
-
-//     if (dataType === 'Currency') {
-//         return <MaskedInput
-//         mask={currencyMask}
-//         id = {props.id}
-//         onChange = {props.change}
-//         />
-//     } else {
-//         return <MaskedInput
-//                 mask={defaultMask}
-//                 id = {props.id}
-//                 onChange = {props.change}
-//                 />
-        
-//     }
-// }
 
 const Slide = (props) => {
     let userInputData = props.data;
