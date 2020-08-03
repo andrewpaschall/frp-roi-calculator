@@ -3,6 +3,7 @@ import React from 'react';
 const stat = (props) => {
     const addition = Number(props.additions);
     const inputTime = Number(props.time);
+    // const inputTime = props.time;
     const inputData = props.data;
     const outputData = Number(inputData.substring(1));
     return (
