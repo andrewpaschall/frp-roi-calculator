@@ -2,34 +2,23 @@ import React, { Component } from 'react';
 import './Site.css';
 import './App.css';
 import Stat from './Stat/Stat';
-import CurrencyInput from './CurrencyInput';
+import Total from './Stat/Total';
 import SignUp from './SignUp/SignUp';
 import Hero from './Hero/Hero';
+import Slide from './SlideInput';
+import ReplacementStat from './Stat/Replacement';
 
 
 class App extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {isOn: true};
-  //   this.state = {
-  //     hourlyRate: '$0',
-  //     repairTime: 0,
-  //     replacementFrequency: 0
-  //   }
-  // }
-
-  // userInputHandler = (event) => {
-  //   this.setState({
-  //     hourlyRate: event.target.value,
-  //     repairTime: event.target.value,
-  //     replacementFrequency: event.target.value
-  //   })
-  // }
-
   state = {
     hourlyRate: '$0',
     repairTime: '0',
+    saggingDoorRepairTime: '0',
+    hardwareAdjustRepairTime: '0',
+    patchFrameRepairTime: '0',
+    frameRemovalTime: '0',
+    frameInstallTime: '0',
     replacementFrequency: '0'
   }
 
@@ -45,38 +34,61 @@ class App extends Component {
     })
   }
 
-  frequencyInputHandler = (event) => {
+  saggingDoorRepairTimeHandler = (event) => {
     this.setState({
-      replacementFrequency: event.target.value
+      saggingDoorRepairTime: event.target.value
     })
   }
 
-  
+  hardwareAdjustRepairTimeHandler = (event) => {
+    this.setState({
+      hardwareAdjustRepairTime: event.target.value
+    })
+  }
+
+  patchFrameRepairTimeHandler = (event) => {
+    this.setState({
+      patchFrameRepairTime: event.target.value
+    })
+  }
+
+  frameRemovalTimeHandler = (event) => {
+    this.setState({
+      frameRemovalTime: event.target.value
+    })
+  }
+
+  frameInstallTimeHandler = (event) => {
+    this.setState({
+      frameInstallTime: event.target.value
+    })
+  }
+
+  frequencyInputHandler = (event) => {
+    if (event.target.value === 2 ){
+      this.setState({
+        replacementFrequency: '2'
+      })
+    } else if (event.target.value >= 3 ){
+      this.setState({
+        replacementFrequency: '1'
+      })
+    } else if (event.target.value > 5 ) {
+        this.setState({
+          replacementFrequency: '0'
+        })
+      } else {
+        this.setState({
+          replacementFrequency: '5'
+        })
+    }
+  }
 
   render(){
 
     return (
       <div className="roiCalculator">
 
-<<<<<<< HEAD
-        {/* Hero */}
-        <Hero></Hero>
-        {/*User Inputs*/}
-        <section className="labor-cost">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.42 70.71" width="30" height="30"><g><g><polygon style={{fill: '#617088'}} points="70.71 70.71 0 0 141.42 0 70.71 70.71"/></g></g></svg>
-            <div className="grid-container">
-                <div className="grid-x grid-padding-x align-center text-center">
-                    <div className="cell">
-                        <h3>Do hollow metal doors and frames stack up to Special-Lite's Premium FRP/Aluminum Hybrid doors and frames? Enter your info below and see for yourself!</h3>
-                    </div>
-                    <div className="User Input">
-                      <div className="cell">
-                        <h2>What is Your Cost of Labor?</h2>
-                        <h3>Please enter your hourly labor cost on the line below</h3>
-                      </div>
-                      <div className="medium-4 cell">
-                        <CurrencyInput change={this.hourlyRateHandler} />
-=======
       {/* Hero */}
       <Hero></Hero>
 
@@ -86,179 +98,104 @@ class App extends Component {
           <div className="grid-container">
               <div className="grid-x grid-padding-x align-center text-center">
                 <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Enter your info below and see for yourself!</h3>
-                  <div className="medium-4 cell">
-                    <Slide data="" change={this.timeInputHandler}>
-                        <h2>On average, how many hours of maintenance do you perform on your doors each year?</h2>
-                        <h3>Enter your answer on the line below</h3>
-                    </Slide>
-                  </div>
-                  <div className="medium-4 cell">
-                    <Slide data="Currency" change={this.hourlyRateHandler}>
-                      <h2>What is your hourly cost of labor?</h2>
-                      <h3>Enter your cost on the line below</h3>
-                    </Slide>
-                  </div>
-                  <div className="medium-4 cell">
-                    <Slide data="" change={this.frequencyInputHandler}>
-                      <h2>How many years pass before you replace a hollow metal door?</h2>
-                      <h3>Enter your answer on the line below</h3>
-                    </Slide>
-                  </div>
+                
+                {/* Time Input
+                <Slide data="" change={this.timeInputHandler}>
+                    <h2>On average, how many hours of maintenance do you perform on your doors each year?</h2>
+                    <h3>Enter your answer on the line below</h3>
+                </Slide> */}
+                
+                {/* Hourly Rate */}
+                <Slide data="Currency" change={this.hourlyRateHandler}>
+                  <h2>What is your hourly cost of labor?</h2>
+                  <h3>Enter your cost on the line below</h3>
+                </Slide>
+
+                {/* Sagging Door Repair Time */}
+                <Slide data="" change={this.saggingDoorRepairTimeHandler}>
+                  <h2>How much time each year do you spend repairing sagging doors?</h2>
+                  <h3>Enter your time in hours on the line below</h3>
+                </Slide>
+
+                {/* Adjust Hardware Time */}
+                <Slide data="" change={this.hardwareAdjustRepairTimeHandler}>
+                  <h2>How much time do you spend adjusting door hardware each year?</h2>
+                  <h3>Enter your answer in hours on the line below</h3>
+                </Slide>
+                
+                {/* Patch Frame Time */}
+                <Slide data="" change={this.patchFrameRepairTimeHandler}>
+                  <h2>How much time do you spend repairing and patching door frames each year?</h2>
+                  <h3>Enter your answer in hours on the line below</h3>
+                </Slide>
+
+                {/* Frame Removal Time */}
+                <Slide data="" change={this.frameRemovalTimeHandler}>
+                  <h2>How long does it take you to remove your door frames once installed?</h2>
+                  <h3>Enter your answer in hours on the line below</h3>
+                </Slide>
+
+                {/* Frame Installation Time */}
+                <Slide data="" change={this.frameInstallTimeHandler}>
+                  <h2>How much time is spent on your average door installation?</h2>
+                  <h3>Enter your answer in hours on the line below</h3>
+                </Slide>
+
+                {/* Replacement Frequency */}
+                <Slide data="" change={this.frequencyInputHandler}>
+                  <h2>How often do you replace a hollow metal door?</h2>
+                  <h3>Enter your answer in years on the line below</h3>
+                </Slide>
+
               </div>
           </div>
       </section>
 
-      {/*Initial Investments*/}
+      {/*Initial Investments Section*/}
       <section className="initial-investment">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 62"><g><g><path style={{fill: '#C75443'}} d="M1920,43s-79.53-28-361-28S1185.18,62,959.59,62,653.06,4,382,4,0,62,0,62V0H1920Z"/></g></g></svg>
         <div className="grid-container">
+          {/*Total Investment*/}
           <div className="grid-x grid-padding-x" style={{paddingBottom: '3rem'}}>
               <div className="cell">
-                  <h2 className="section-title black">Total Cost of Hollow Metal Doors Over the Life of A Special-Lite FRP/Aluminum Hybrid Door</h2>
+                  <h2 className="section-title black">Total Cost of a Hollow Metal Door and Frame Over the Life of A Special-Lite FRP/Aluminum Hybrid Door and Frame</h2>
                   <span className="section-underline black"></span>
               </div>
               <div className="medium-6 cell">
                   <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
                   <span className="section-underline black"></span>
-                  <Stat color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1652">Total Product Cost</Stat>
+                  <Total color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1652">Total Product Cost</Total>
               </div>
               <div className="medium-6 cell">
                   <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
                   <span className="section-underline black"></span>
-                  <Stat color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1450">Total Product Cost</Stat>
-              </div>
-              <div className="cell" style={{marginTop: '3rem'}}>
-                  <h2 className="section-title black" style={{fontWeight: '900', fontSize: '3em'}}>See The Breakdown Below</h2>
+                  <Total color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1450">Total Product Cost</Total>
               </div>
           </div>
-            <div id="investment" className="grid-x grid-padding-x">
-                <div className="cell">
-                    <h3 className="section-title black">Initial Investment</h3>
-                    <div className="section-underline black"></div>
-                </div>
-                <div className="medium-6 cell">
-                  <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
-                  <span className="section-underline black"></span>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="413">Purchase Price</Stat>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Field Installation</Stat>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Painting at Time of Install</Stat>
-                </div>
-                <div className="medium-6 cell">
-                  <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
-                  <span className="section-underline black"></span>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="1450">Purchase Price</Stat>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Field Installation</Stat>
-                  <Stat color="black" time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Painting at Time of Install*</Stat>
-                </div>
-            </div>
+          
+          {/*Initial Investment Data*/}
+          <div id="investment" className="grid-x grid-padding-x">
+              <div className="cell">
+                  <h3 className="section-title black">Initial Investment</h3>
+                  <div className="section-underline black"></div>
+              </div>
+              <div className="medium-6 cell">
+                <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
+                <span className="section-underline black"></span>
+                <Stat id="hm_purchasePrice" color="black" time="0"  data={this.state.hourlyRate} additions={413 + 180}>Purchase Price</Stat>
+                <Stat id="hm_fieldInstallations" color="black" time={this.state.frameInstallTime}  data={this.state.hourlyRate} additions="0">Field Installation</Stat>
+                <Stat id="hm_installPaint" color="black" time="2"  data={this.state.hourlyRate} additions="0">Painting at Time of Install</Stat>
+              </div>
+              <div className="medium-6 cell">
+                <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
+                <span className="section-underline black"></span>
+                <Stat id="sl_purchasePrice" color="black" time="0"  data={this.state.hourlyRate} additions={1450 + 721}>Purchase Price</Stat>
+                <Stat id="sl_fieldInstallations" color="black" time="3"  data={this.state.hourlyRate} additions="0">Field Installation</Stat>
+                <Stat id="sl_installPaint" color="black" time="0"  data={this.state.hourlyRate} additions="0">Painting at Time of Install*</Stat>
+              </div>
+          </div>
         </div>
       </section>
-
-              {/*Yearly Maintenance*/}
-              <section className="yearly-maintenance">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.42 70.71" width="30" height="30" className="top"><g><g><polygon style={{fill: '#ebebeb'}} points="70.71 70.71 0 0 141.42 0 70.71 70.71"/></g></g></svg>
-                  <div className="grid-container">
-                      <div className="grid-x grid-padding-x">
-                          <div className="cell">
-                              <h3 className="section-title">Yearly Maintenance</h3>
-                              <div className="section-underline"></div>
-                          </div>
-                          <div className="medium-6 cell">
-                            <h4 className="text-center">Hollow Metal</h4>
-                            <span className="section-underline"></span>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repair/Rehang/Adjust Door</Stat>
-                            <Stat time="25"  data={this.state.hourlyRate} additions="0">Repair/Adjust Exit Devices</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repair/Adjust Closers</Stat>
-                          </div>
-                          <div className="medium-6 cell">
-                            <h4 className="text-center">Special-Lite FRP/Aluminum Hybrid</h4>
-                            <span className="section-underline"></span>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repair/rehang/adjust door</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repair/Adjust Exit Devices</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repair/Adjust Closers</Stat>
-                          </div>
->>>>>>> 9fb83feb8e9a0246be03e6034fe44ebaa1088181
-                      </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/*Initial Investments*/}
-        <section className="initial-investment">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 62"><g><g><path style={{fill: '#C75443'}} d="M1920,43s-79.53-28-361-28S1185.18,62,959.59,62,653.06,4,382,4,0,62,0,62V0H1920Z"/></g></g></svg>
-            <div className="grid-container">
-              <div className="grid-x grid-padding-x" style={{paddingBottom: '3rem'}}>
-                  <div className="cell">
-                      <h2 className="section-title black">Total Cost of Hollow Metal Doors Over the Life of A Special-Lite FRP/Aluminum Hybrid Door</h2>
-                      <span className="section-underline black"></span>
-                  </div>
-<<<<<<< HEAD
-                  <div className="medium-6 cell">
-                      <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
-                      <span className="section-underline black"></span>
-                      <Stat color="black" time="94" data={this.state.hourlyRate} additions="1652">Total Product Cost</Stat>
-                  </div>
-                  <div className="medium-6 cell">
-                      <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
-                      <span className="section-underline black"></span>
-                      <Stat color="black" time="14" data={this.state.hourlyRate} additions="1450">Total Product Cost</Stat>
-=======
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 147" className="bottom"><path style={{fill: '#C75443'}} d="M0,111s132.53,29,414,29S817.41,12,1043,12s308.94,85,580,85S1920,0,1920,0V147H0Z"/></svg>
-              </section>
-
-              {/*Payoff Over Time*/}
-              <section className="pay-off">
-                  <div className="grid-container">
-                      <div className="grid-x grid-padding-x">
-                          <div className="cell">
-                              <h3 className="section-title">The Payoff Over Time</h3>
-                              <div className="section-underline"></div>
-                          </div>
-                          <div className="medium-6 cell">
-                            <h4 className="text-center">Hollow Metal</h4>
-                            <span className="section-underline"></span>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repainting Every 3 Years</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="1239">Door Replacements</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
-                          </div>
-                          <div className="medium-6 cell">
-                            <h4 className="text-center">Special-Lite FRP/Aluminum Hybrid</h4>
-                            <span className="section-underline"></span>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Repainting Every 3 Years</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Door Replacements</Stat>
-                            <Stat time={this.state.repairTime}  data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
-                          </div>
-                      </div>
->>>>>>> 9fb83feb8e9a0246be03e6034fe44ebaa1088181
-                  </div>
-                  <div className="cell" style={{marginTop: '3rem'}}>
-                      <h2 className="section-title black" style={{fontWeight: '900', fontSize: '3em'}}>See The Breakdown Below</h2>
-                  </div>
-              </div>
-                <div id="investment" className="grid-x grid-padding-x">
-                    <div className="cell">
-                        <h3 className="section-title black">Initial Investment</h3>
-                        <div className="section-underline black"></div>
-                    </div>
-                    <div className="medium-6 cell">
-                      <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
-                      <span className="section-underline black"></span>
-                      <Stat color="black" time="0" data={this.state.hourlyRate} additions="413">Purchase Price</Stat>
-                      <Stat color="black" time="4" data={this.state.hourlyRate} additions="0">Field Installation</Stat>
-                      <Stat color="black" time="2" data={this.state.hourlyRate} additions="0">Painting at Time of Install</Stat>
-                    </div>
-                    <div className="medium-6 cell">
-                      <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
-                      <span className="section-underline black"></span>
-                      <Stat color="black" time="0" data={this.state.hourlyRate} additions="1450">Purchase Price</Stat>
-                      <Stat color="black" time="3" data={this.state.hourlyRate} additions="0">Field Installation</Stat>
-                      <Stat color="black" time="0" data={this.state.hourlyRate} additions="0">Painting at Time of Install*</Stat>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         {/*Yearly Maintenance*/}
         <section className="yearly-maintenance">
@@ -267,21 +204,21 @@ class App extends Component {
                 <div className="grid-x grid-padding-x">
                     <div className="cell">
                         <h3 className="section-title">Yearly Maintenance</h3>
-                        <div className="section-underline"></div>
+                        <span className="section-underline"></span>
                     </div>
                     <div className="medium-6 cell">
                       <h4 className="text-center">Hollow Metal</h4>
                       <span className="section-underline"></span>
-                      <Stat time="1" data={this.state.hourlyRate} additions="0">Repair/Rehang/Adjust Door</Stat>
-                      <Stat time="1" data={this.state.hourlyRate} additions="0">Repair/Adjust Exit Devices</Stat>
-                      <Stat time="3" data={this.state.hourlyRate} additions="0">Repair/Adjust Closers</Stat>
+                      <Stat id="hm_saggingDoors" time={this.state.saggingDoorRepairTime} data={this.state.hourlyRate} additions="0">Repair Sagging Doors</Stat>
+                      <Stat id="hm_adjustHardware" time={this.state.hardwareAdjustRepairTime} data={this.state.hourlyRate} additions="0">Repair/Adjust Hardware</Stat>
+                      <Stat id="hm_repairFrames" time={this.state.patchFrameRepairTime} data={this.state.hourlyRate} additions="0">Repair Frames</Stat>
                     </div>
                     <div className="medium-6 cell">
                       <h4 className="text-center">Special-Lite FRP/Aluminum Hybrid</h4>
                       <span className="section-underline"></span>
-                      <Stat time="0" data={this.state.hourlyRate} additions="0">Repair/rehang/adjust door</Stat>
-                      <Stat time="0.25" data={this.state.hourlyRate} additions="0">Repair/Adjust Exit Devices</Stat>
-                      <Stat time="0.25" data={this.state.hourlyRate} additions="0">Repair/Adjust Closers</Stat>
+                      <Stat id="sl_saggingDoors" time="0" data={this.state.hourlyRate} additions="0">Repair Sagging Doors</Stat>
+                      <Stat id="sl_adjustHardware" time="0.25" data={this.state.hourlyRate} additions="0">Repair/Adjust Hardware</Stat>
+                      <Stat id="sl_repairFrames" time="0" data={this.state.hourlyRate} additions="0">Repair Frames</Stat>
                     </div>
                 </div>
             </div>
@@ -289,6 +226,7 @@ class App extends Component {
         </section>
 
         {/*Payoff Over Time*/}
+
         <section className="pay-off">
             <div className="grid-container">
                 <div className="grid-x grid-padding-x">
@@ -299,16 +237,16 @@ class App extends Component {
                     <div className="medium-6 cell">
                       <h4 className="text-center">Hollow Metal</h4>
                       <span className="section-underline"></span>
-                      <Stat time="6" data={this.state.hourlyRate} additions="0">Repainting Every 3 Years</Stat>
-                      <Stat time="18" data={this.state.hourlyRate} additions="1239">Door Replacements</Stat>
-                      <Stat time="60" data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
+                      <Stat id="hm_repaint" time="4" data={this.state.hourlyRate} additions="0">Repainting Every 2 Years</Stat>
+                      <ReplacementStat id="hm_doorReplacement" removalTime={this.state.frameRemovalTime} installTime={this.state.frameInstallTime} frequency={this.state.replacementFrequency} data={this.state.hourlyRate} additions="593">Door Replacements</ReplacementStat>
+                      <Stat id="hm_totalMaintenance" time="24" data={this.state.hourlyRate} additions="12">Total General Maintenance</Stat>
                     </div>
                     <div className="medium-6 cell">
                       <h4 className="text-center">Special-Lite FRP/Aluminum Hybrid</h4>
                       <span className="section-underline"></span>
-                      <Stat time="0" data={this.state.hourlyRate} additions="0">Repainting Every 3 Years</Stat>
-                      <Stat time="0" data={this.state.hourlyRate} additions="0">Door Replacements</Stat>
-                      <Stat time="10" data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
+                      <Stat id="sl_repaint" time="0" data={this.state.hourlyRate} additions="0">Repainting Every 2 Years</Stat>
+                      <Stat id="sl_doorReplacement" time="0" data={this.state.hourlyRate} additions="0">Door Replacements</Stat>
+                      <Stat id="sl_totalMaintenance" time="10" data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
                     </div>
                 </div>
             </div>

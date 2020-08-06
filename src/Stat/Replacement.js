@@ -1,20 +1,27 @@
 import React from 'react';
 
-const stat = (props) => {
+const ReplacementStat = (props) => {
     const componentID = props.id;
     const addition = Number(props.additions);
-    const inputTime = Number(props.time);
+    const removalTime = Number(props.removalTime);
+    const installTime = Number(props.installTime);
+    const replacementFrequency = Number(props.frequency);
     const inputData = props.data.toString();
     const outputData = Number(inputData.substring(1));
+    const inputTime = removalTime + installTime;
+    const paintTime = outputData * 2;
     
     return (
         <div className={"counter-block " + props.color}>
             <div className="counter-display">
                 {console.log(componentID + ' ////////')}
                 {console.log('hourlyRate: ' + inputData)}
+                {console.log('removalTime: ' + removalTime)}
+                {console.log('installTime: ' + installTime)}
                 {console.log('inputTime: ' + inputTime)}
+                {console.log('replacementFrequency: ' + replacementFrequency)}
                 {console.log('addition: ' + addition)}
-                <span>${Math.round((outputData * inputTime) + addition)}</span>
+                <span>${Math.round(((outputData * inputTime) + paintTime + addition) * replacementFrequency)}</span>
                 {/* <span>{outputData}</span> */}
             </div>
             <div className="counter-label">
@@ -24,4 +31,4 @@ const stat = (props) => {
     )
 };
 
-export default stat;
+export default ReplacementStat;
