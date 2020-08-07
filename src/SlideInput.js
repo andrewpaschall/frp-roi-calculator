@@ -40,6 +40,7 @@ const Slide = (props) => {
                         <MaskedInput
                             mask={currencyMask}
                             id = {props.id}
+                            className = {props.className}
                             onChange = {props.change}
                             />
                     </div>

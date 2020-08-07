@@ -97,13 +97,7 @@ class App extends Component {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.42 70.71" width="30" height="30"><g><g><polygon style={{fill: '#617088'}} points="70.71 70.71 0 0 141.42 0 70.71 70.71"/></g></g></svg>
           <div className="grid-container">
               <div className="grid-x grid-padding-x align-center text-center">
-                <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Enter your info below and see for yourself!</h3>
-                
-                {/* Time Input
-                <Slide data="" change={this.timeInputHandler}>
-                    <h2>On average, how many hours of maintenance do you perform on your doors each year?</h2>
-                    <h3>Enter your answer on the line below</h3>
-                </Slide> */}
+                <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Just answer a few questions and see for yourself!</h3>
                 
                 {/* Hourly Rate */}
                 <Slide data="Currency" change={this.hourlyRateHandler}>
@@ -180,7 +174,7 @@ class App extends Component {
                   removalTime="0"
                   installTime="3"
                   frequency="0"
-                  purchasePrice="2173"
+                  purchasePrice="2171"
                   saggingDoor="0"
                   adjustHardware="0.25"
                   frameRepair="0"

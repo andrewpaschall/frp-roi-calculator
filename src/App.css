@@ -25,54 +25,6 @@ label {
 .section-underline.black {
     border-top: 3px solid #333;
 }
-
-#hourly_rate {
-    border-radius: 0;
-    width: 100%;
-    max-width: 450px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    border-top: none;
-    border-right: none;
-    border-bottom: 3px solid #fefefe;
-    border-left: none;
-    background: transparent; color: #fefefe;
-    font-size: 4em;
-    font-weight: 900;
-    line-height: 1.1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    text-align: center;
-    outline: none;
-    box-shadow: none;
-}
-#hourly_rate:before {
-    content: "jQuery";
-    color: #fefefe;
-    display: block;
-}
-
-#hourly_rate:focus {
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    box-shadow: none;
-}
-
-button[type=submit]{
-    background: #CE9411;
-    padding: 1em 3em;
-    margin-top: 1rem;
-    border-radius: 0;
-    display: block;
-    margin-right: auto!important;
-    margin-left: auto!important;
-    color: #fefefe;
-}
-
-
-
 /** Counter Styling **/
 .counter-block {
     color: #fefefe;
@@ -174,8 +126,74 @@ section.pay-off {
     padding: 2em;
 }
 
+.slide input {
+    border-radius: 0;
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: none;
+    border-right: none;
+    border-bottom: 3px solid #fefefe;
+    border-left: none;
+    background: transparent; color: #fefefe;
+    font-size: 4em;
+    font-weight: 900;
+    line-height: 1.1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+}
 
-/** .sign-um styling **/
+#hourly_rate {
+    border-radius: 0;
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: none;
+    border-right: none;
+    border-bottom: 3px solid #fefefe;
+    border-left: none;
+    background: transparent; color: #fefefe;
+    font-size: 4em;
+    font-weight: 900;
+    line-height: 1.1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+}
+#hourly_rate:before {
+    content: "jQuery";
+    color: #fefefe;
+    display: block;
+}
+
+#hourly_rate:focus {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    box-shadow: none;
+}
+
+button[type=submit]{
+    background: #CE9411;
+    padding: 1em 3em;
+    margin-top: 1rem;
+    border-radius: 0;
+    display: block;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    color: #fefefe;
+}
+
+/** .sign-up styling **/
 .sign-up {
     background: linear-gradient(10deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, .8) 50%), url(https://special-lite.com/wp-content/uploads/2020/01/boxing-knockout.svg);
     background-size: cover;
