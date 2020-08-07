@@ -11,24 +11,40 @@ const ReplacementStat = (props) => {
     const inputTime = removalTime + installTime;
     const paintTime = outputData * 2;
     
-    return (
-        <div className={"counter-block " + props.color}>
-            <div className="counter-display">
-                {console.log(componentID + ' ////////')}
-                {console.log('hourlyRate: ' + inputData)}
-                {console.log('removalTime: ' + removalTime)}
-                {console.log('installTime: ' + installTime)}
-                {console.log('inputTime: ' + inputTime)}
-                {console.log('replacementFrequency: ' + replacementFrequency)}
-                {console.log('addition: ' + addition)}
-                <span>${Math.round(((outputData * inputTime) + paintTime + addition) * replacementFrequency)}</span>
-                {/* <span>{outputData}</span> */}
+    console.log(componentID + ' ////////');
+    console.log('hourlyRate: ' + inputData);
+    console.log('removalTime: ' + removalTime);
+    console.log('installTime: ' + installTime);
+    console.log('inputTime: ' + inputTime);
+    console.log('replacementFrequency: ' + replacementFrequency);
+    console.log('addition: ' + addition);
+
+
+    if (replacementFrequency > 0) {
+        return (
+            <div className={"counter-block " + props.color}>
+                <div className="counter-display">
+                    <span>${Math.round(((outputData * inputTime) + paintTime + addition) * replacementFrequency)}</span>
+                    {/* <span>{outputData}</span> */}
+                </div>
+                <div className="counter-label">
+                    <p>{props.children}</p>
+                </div>
             </div>
-            <div className="counter-label">
-                <p>{props.children}</p>
+        )
+    } else {
+        return (
+            <div className={"counter-block " + props.color}>
+                <div className="counter-display">
+                    <span>$0</span>
+                    {/* <span>{outputData}</span> */}
+                </div>
+                <div className="counter-label">
+                    <p>{props.children}</p>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 };
 
 export default ReplacementStat;

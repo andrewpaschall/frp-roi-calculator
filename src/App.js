@@ -65,15 +65,15 @@ class App extends Component {
   }
 
   frequencyInputHandler = (event) => {
-    if (event.target.value === 2 ){
+    if (Number(event.target.value) === 2 ){
       this.setState({
         replacementFrequency: '2'
       })
-    } else if (event.target.value >= 3 ){
+    } else if (Number(event.target.value) >= 3 ){
       this.setState({
         replacementFrequency: '1'
       })
-    } else if (event.target.value > 5 ) {
+    } else if (Number(event.target.value) > 5 ) {
         this.setState({
           replacementFrequency: '0'
         })
@@ -137,7 +137,7 @@ class App extends Component {
 
                 {/* Frame Installation Time */}
                 <Slide data="" change={this.frameInstallTimeHandler}>
-                  <h2>How much time is spent on your average door installation?</h2>
+                  <h2>How much time does it take your team to install a door?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
                 </Slide>
 
@@ -164,12 +164,27 @@ class App extends Component {
               <div className="medium-6 cell">
                   <h4 className="text-center" style={{color: '#333'}}>Hollow Metal</h4>
                   <span className="section-underline black"></span>
-                  <Total color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1652">Total Product Cost</Total>
+                  <Total color="black" id="hm_grandTotal" type="grandTotal" time={this.state.repairTime} data={this.state.hourlyRate} removalTime={this.state.frameRemovalTime} installTime={this.state.frameInstallTime} frequency={this.state.replacementFrequency} purchasePrice="593" saggingDoor={this.state.saggingDoorRepairTime} adjustHardware={this.state.hardwareAdjustRepairTime} frameRepair={this.state.patchFrameRepairTime}>
+                    Total Product Cost
+                  </Total>
               </div>
               <div className="medium-6 cell">
                   <h4 className="text-center" style={{color: '#333'}}>Special-Lite FRP/Aluminum Hybrid</h4>
                   <span className="section-underline black"></span>
-                  <Total color="black" time={this.state.repairTime} data={this.state.hourlyRate} additions="1450">Total Product Cost</Total>
+                  <Total
+                  color="black"
+                  id="sl_grandTotal"
+                  type="grandTotal"
+                  time={this.state.repairTime}
+                  data={this.state.hourlyRate}
+                  removalTime="0"
+                  installTime="3"
+                  frequency="0"
+                  purchasePrice="2173"
+                  saggingDoor="0"
+                  adjustHardware="0.25"
+                  frameRepair="0"
+                  >Total Product Cost</Total>
               </div>
           </div>
           
@@ -239,14 +254,29 @@ class App extends Component {
                       <span className="section-underline"></span>
                       <Stat id="hm_repaint" time="4" data={this.state.hourlyRate} additions="0">Repainting Every 2 Years</Stat>
                       <ReplacementStat id="hm_doorReplacement" removalTime={this.state.frameRemovalTime} installTime={this.state.frameInstallTime} frequency={this.state.replacementFrequency} data={this.state.hourlyRate} additions="593">Door Replacements</ReplacementStat>
-                      <Stat id="hm_totalMaintenance" time="24" data={this.state.hourlyRate} additions="12">Total General Maintenance</Stat>
+                      <Total
+                      id="hm_totalMaintenance"
+                      type="payoff"
+                      data={this.state.hourlyRate}
+                      removalTime={this.state.frameRemovalTime}
+                      installTime={this.state.frameInstallTime}
+                      frequency={this.state.replacementFrequency}
+                      purchasePrice="593">Total General Maintenance</Total>
                     </div>
                     <div className="medium-6 cell">
                       <h4 className="text-center">Special-Lite FRP/Aluminum Hybrid</h4>
                       <span className="section-underline"></span>
                       <Stat id="sl_repaint" time="0" data={this.state.hourlyRate} additions="0">Repainting Every 2 Years</Stat>
                       <Stat id="sl_doorReplacement" time="0" data={this.state.hourlyRate} additions="0">Door Replacements</Stat>
-                      <Stat id="sl_totalMaintenance" time="10" data={this.state.hourlyRate} additions="0">Total General Maintenance</Stat>
+                      <Total
+                      id="sl_totalMaintenance"
+                      type="payoff"
+                      data={this.state.hourlyRate}
+                      removalTime="0"
+                      installTime="0"
+                      frequency="0"
+                      purchasePrice="0"
+                      >Total General Maintenance</Total>
                     </div>
                 </div>
             </div>
