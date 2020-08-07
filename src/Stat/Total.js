@@ -157,17 +157,13 @@ const total = (props) => {
                         purchasePrice +
                         //Field Installation
                         (installTime * rateOutput) +
-                        //Painting at Install
-                        paintCost +
                         //***** Maintenance *****//
                         //Repair Sagging Doors
                         (saggingDoor * rateOutput) +
                         //Repair/Adjust Hardware
                         (adjustHardware * rateOutput) +
                         //Repair Frames
-                        (frameRepair * rateOutput) +
-                        //***** Payoff Over Time *****//
-                        (paintCost * paintFrequency)
+                        (frameRepair * rateOutput)
                     )}</span>
                 </div>
                 <div className="counter-label">
