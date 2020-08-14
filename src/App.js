@@ -125,13 +125,13 @@ class App extends Component {
 
                 {/* Frame Removal Time */}
                 <Slide data="" change={this.frameRemovalTimeHandler}>
-                  <h2>How long does it take you to remove your door frames once installed?</h2>
+                  <h2>How long does it take to remove your existing Hollow Metal door and frame?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
                 </Slide>
 
                 {/* Frame Installation Time */}
                 <Slide data="" change={this.frameInstallTimeHandler}>
-                  <h2>How much time does it take your team to install a door?</h2>
+                  <h2>How much time does it take your team to reinstall a door and frame?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
                 </Slide>
 
