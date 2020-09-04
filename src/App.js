@@ -5,8 +5,9 @@ import Stat from './Stat/Stat';
 import Total from './Stat/Total';
 import SignUp from './SignUp/SignUp';
 import Hero from './Hero/Hero';
-import Slide from './SlideInput';
+import Slide from './MultiStepForm/SlideInput';
 import ReplacementStat from './Stat/Replacement';
+import MultiStepForm from './MultiStepForm/MultiStepForm';
 
 
 class App extends Component {
@@ -98,6 +99,7 @@ class App extends Component {
           <div className="grid-container">
               <div className="grid-x grid-padding-x align-center text-center">
                 <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Just answer a few questions and see for yourself!</h3>
+                <MultiStepForm />
                 
                 {/* Hourly Rate */}
                 <Slide data="Currency" change={this.hourlyRateHandler}>
