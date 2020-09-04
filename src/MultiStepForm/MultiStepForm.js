@@ -45,7 +45,7 @@ const MultiStepForm = ({ images }) => {
         case 'review':
             return <Review {...props} />;
         case 'submit':
-            return <submit {...props} />;
+            return <Submit {...props} />;
         default:
             return null;
     }
