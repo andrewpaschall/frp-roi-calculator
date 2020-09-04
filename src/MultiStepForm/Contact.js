@@ -11,7 +11,7 @@ const Contact = ({ setForm, formData, navigation }) => {
         <div className="form">
             <h3>Contact </h3>
             <ItemForm label="Phone" name="phone" value={phone} onChange={setForm} />
-            <ItemForm label="email" name="email" value={email} onChange={setForm} />
+            <ItemForm label="Email" name="email" value={email} onChange={setForm} />
             <div>
                 <button onClick={previous}>Previous</button>
                 <button onClick={next}>Next</button>
