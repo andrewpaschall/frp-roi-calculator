@@ -5,15 +5,20 @@ import { useForm, useStep } from 'react-hooks-helper';
 import Names from './Names';
 import Address from './Address';
 import Contact from './Contact';
+
+import HourlyRate from './HourlyRate';
+import FramePatch from './FramePatch';
+import HardwareAdjust from './HardwareAdjust';
+import HMRemoval from './HMRemoval';
+import ReinstallTime from './ReinstallTime';
+import SagRepair from './SagRepair';
 import Review from './Review';
-import Submit from  './Submit';
 
 const steps = [
     { id: 'names' },
     { id: 'address' },
     { id: 'contact' },
-    { id: 'review' },
-    { id: 'submit'}
+    { id: 'review' }
 ];
 
 const defaultData = {
@@ -44,8 +49,6 @@ const MultiStepForm = ({ images }) => {
             return <Contact {...props} />;
         case 'review':
             return <Review {...props} />;
-        case 'submit':
-            return <Submit {...props} />;
         default:
             return null;
     }

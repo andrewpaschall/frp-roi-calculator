@@ -57,9 +57,6 @@ const Review = ({ setForm, formData, navigation }) => {
                 <br />
                 Email: {`${email}`}
             </div>
-            <div>
-                <button onClick={() => go("submit")}>Submit</button>
-            </div>
 
         </div>
     );
