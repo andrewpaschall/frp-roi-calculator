@@ -44,6 +44,7 @@ const ItemForm = ( props ) => {
                     </>
                 ) : (
                     <>
+                        {props.children}
                         <MaskedInput mask={defaultMask} id={props.id} className={props.className} onChange={props.change} />
                     </>
                 )}

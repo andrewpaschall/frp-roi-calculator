@@ -1,11 +1,6 @@
 import React from 'react';
 import { useForm, useStep } from 'react-hooks-helper';
 
-//import Slide from './SlideInput';
-// import Names from './Names';
-// import Address from './Address';
-// import Contact from './Contact';
-
 import HourlyRate from './HourlyRate';
 import FramePatch from './FramePatch';
 import HardwareAdjust from './HardwareAdjust';
@@ -23,17 +18,17 @@ const steps = [
     { id: 'hmRemoval' },
     { id: 'reinstallTime' },
     { id: 'sagRepair' },
-    { id: 'replacementFrequency' }
+    { id: 'replacementFrequency' },
+    { id: 'review' }
 ];
 
 const defaultData = {
     hourlyRate: '$0',
-    repairTime: '0',
-    saggingDoorRepairTime: '0',
-    hardwareAdjustRepairTime: '0',
-    patchFrameRepairTime: '0',
-    frameRemovalTime: '0',
-    frameInstallTime: '0',
+    framePatch: '0',
+    hardwareAdjust: '0',
+    hmRemoval: '0',
+    reinstallTime: '0',
+    sagRepair: '0',
     replacementFrequency: '0'
 };
 

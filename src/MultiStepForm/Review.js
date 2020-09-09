@@ -20,85 +20,81 @@ const Review = ({ setForm, formData, navigation }) => {
             {/* Hourly Rate */}
             <h4>
                 Hourly Rate
-                <button onClick={() => go("hourlyRate")}>Edit</button>
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${hourlyRate}`}</span>,
+                <span className="review-stat">{`${hourlyRate}`}</span>
                 <br />
-                <span className="review-stat-label">Hourly Rate</span>,
+                <button onClick={() => go("hourlyRate")}>Edit</button>
             </div>
 
             {/* Sag Repair */}
             <h4>
-                Hourly Rate
-                <button onClick={() => go("sagRepair")}>Edit</button>
+                Sag Repair Time
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${sagRepair}`}</span>,
+                <span className="review-stat">{`${sagRepair}`}</span>
                 <br />
-                <span className="review-stat-label">Sag Repair Time</span>,
+                <button onClick={() => go("sagRepair")}>Edit</button>
             </div>
 
             {/* Adjust Hardware */}
             <h4>
-                Hourly Rate
-                <button onClick={() => go("hardwareAdjust")}>Edit</button>
+                Adjust Hardware Time
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${hardwareAdjust}`}</span>,
+                <span className="review-stat">{`${hardwareAdjust}`}</span>
                 <br />
-                <span className="review-stat-label">Adjust Hardware Time</span>,
+                <button onClick={() => go("hardwareAdjust")}>Edit</button>
             </div>
 
             {/* Patch Frame */}
             <h4>
-                Hourly Rate
-                <button onClick={() => go("framePatch")}>Edit</button>
+                Frame Patching Time
+                
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${framePatch}`}</span>,
+                <span className="review-stat">{`${framePatch}`}</span>
                 <br />
-                <span className="review-stat-label">Frame Patching Time</span>,
+                <button onClick={() => go("framePatch")}>Edit</button>
             </div>
 
             {/* Frame Removal */}
             <h4>
-                Hourly Rate
-                <button onClick={() => go("hmRemoval")}>Edit</button>
+                Hollow Metal Frame Removal Time
+                
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${hmRemoval}`}</span>,
+                <span className="review-stat">{`${hmRemoval}`}</span>
                 <br />
-                <span className="review-stat-label">Hollow Metal Frame Removal Time</span>,
+                <button onClick={() => go("hmRemoval")}>Edit</button>
             </div>
 
             {/* Frame Install */}
             <h4>
-                Hourly Rate
-                <button onClick={() => go("reinstallTime")}>Edit</button>
+                Frame Install Time
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${reinstallTime}`}</span>,
+                <span className="review-stat">{`${reinstallTime}`}</span>
                 <br />
-                <span className="review-stat-label">Frame Install Time</span>,
+                <button onClick={() => go("reinstallTime")}>Edit</button>
             </div>
 
             {/* Replacement Frequency */}
             <h4>
                 Hourly Rate
-                <button onClick={() => go("replacementFrequency")}>Edit</button>
+                
             </h4>
             <div>
                 {" "}
-                <span className="review-stat">{`${replacementFrequency}`}</span>,
+                <span className="review-stat">{`${replacementFrequency}`}</span>
                 <br />
-                <span className="review-stat-label">Replacement Frequency</span>,
+                <button onClick={() => go("replacementFrequency")}>Edit</button>
             </div>
 
         </div>
