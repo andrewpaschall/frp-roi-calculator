@@ -11,16 +11,65 @@ import MultiStepForm from './MultiStepForm/MultiStepForm';
 
 
 class App extends Component {
-      state = {
-      hourlyRate: '$0',
-      repairTime: '0',
-      saggingDoorRepairTime: '0',
-      hardwareAdjustRepairTime: '0',
-      patchFrameRepairTime: '0',
-      frameRemovalTime: '0',
-      frameInstallTime: '0',
-      replacementFrequency: '0'
+  constructor(props) {
+    super(props)
+    //Set the initial input values
+    this.state = {
+        currentStep: 1, //Default is Step 1
+        hourlyRate: '$0',
+        repairTime: '0',
+        saggingDoorRepairTime: '0',
+        hardwareAdjustRepairTime: '0',
+        patchFrameRepairTime: '0',
+        frameRemovalTime: '0',
+        frameInstallTime: '0',
+        replacementFrequency: '0'
+    }
+    //Bind the submission to handleChange()
+    this.handleChange = this.handleChange.bind(this)
   }
+
+    //Use the submitted data to set the state
+    handleChange(event) {
+      // const {name, value} = event.target
+      this.setState({
+          hourlyRate: event.target.value,
+          saggingDoorRepairTime: event.target.value,
+          hardwareAdjustRepairTime: event.target.value,
+          patchFrameRepairTime: event.target.value,
+          frameRemovalTime: event.target.value,
+          frameInstallTime: event.target.value
+      })
+      if (this.props.data === 'frequency' && Number(event.target.value) === 2){
+          this.setState({
+              replacementFrequency: '2'
+          })
+      } else if (this.props.data === 'frequency' && Number(event.target.value) >= 3){
+          this.setState({
+              replacementFrequency: '1'
+          })
+      } else if (this.props.data === 'frequency' && Number(event.target.value) > 5) {
+          this.setState({
+              replacementFrequency: '0'
+          })
+      } else {
+          this.setState({
+              replacementFrequency: '5'
+          })
+      }
+  }
+
+
+  //     state = {
+  //     hourlyRate: '$0',
+  //     repairTime: '0',
+  //     saggingDoorRepairTime: '0',
+  //     hardwareAdjustRepairTime: '0',
+  //     patchFrameRepairTime: '0',
+  //     frameRemovalTime: '0',
+  //     frameInstallTime: '0',
+  //     replacementFrequency: '0'
+  // }
 
 //   //Use the submitted data to set the state
 //   handleChange(event) {

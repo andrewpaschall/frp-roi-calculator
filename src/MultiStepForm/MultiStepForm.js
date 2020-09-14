@@ -16,17 +16,17 @@ class MultiStepForm extends React.Component {
         //Set the initial input values
         this.state = {
             currentStep: 1, //Default is Step 1
-            hourlyRate: '$0',
-            repairTime: '0',
-            saggingDoorRepairTime: '0',
-            hardwareAdjustRepairTime: '0',
-            patchFrameRepairTime: '0',
-            frameRemovalTime: '0',
-            frameInstallTime: '0',
-            replacementFrequency: '0'
+            // hourlyRate: '$0',
+            // repairTime: '0',
+            // saggingDoorRepairTime: '0',
+            // hardwareAdjustRepairTime: '0',
+            // patchFrameRepairTime: '0',
+            // frameRemovalTime: '0',
+            // frameInstallTime: '0',
+            // replacementFrequency: '0'
         }
         //Bind the submission to handleChange()
-        this.handleChange = this.handleChange.bind(this)
+        // this.handleChange = this.handleChange.bind(this)
 
         //Bind new functions for next and previous
         this._next = this._next.bind(this)
@@ -81,34 +81,34 @@ class MultiStepForm extends React.Component {
     }
 
     //Use the submitted data to set the state
-    handleChange(event) {
-        // const {name, value} = event.target
-        this.setState({
-            hourlyRate: event.target.value,
-            saggingDoorRepairTime: event.target.value,
-            hardwareAdjustRepairTime: event.target.value,
-            patchFrameRepairTime: event.target.value,
-            frameRemovalTime: event.target.value,
-            frameInstallTime: event.target.value
-        })
-        if (this.props.data === 'frequency' && Number(event.target.value) === 2){
-            this.setState({
-                replacementFrequency: '2'
-            })
-        } else if (this.props.data === 'frequency' && Number(event.target.value) >= 3){
-            this.setState({
-                replacementFrequency: '1'
-            })
-        } else if (this.props.data === 'frequency' && Number(event.target.value) > 5) {
-            this.setState({
-                replacementFrequency: '0'
-            })
-        } else {
-            this.setState({
-                replacementFrequency: '5'
-            })
-        }
-    }
+    // handleChange(event) {
+    //     // const {name, value} = event.target
+    //     this.setState({
+    //         hourlyRate: event.target.value,
+    //         saggingDoorRepairTime: event.target.value,
+    //         hardwareAdjustRepairTime: event.target.value,
+    //         patchFrameRepairTime: event.target.value,
+    //         frameRemovalTime: event.target.value,
+    //         frameInstallTime: event.target.value
+    //     })
+    //     if (this.props.data === 'frequency' && Number(event.target.value) === 2){
+    //         this.setState({
+    //             replacementFrequency: '2'
+    //         })
+    //     } else if (this.props.data === 'frequency' && Number(event.target.value) >= 3){
+    //         this.setState({
+    //             replacementFrequency: '1'
+    //         })
+    //     } else if (this.props.data === 'frequency' && Number(event.target.value) > 5) {
+    //         this.setState({
+    //             replacementFrequency: '0'
+    //         })
+    //     } else {
+    //         this.setState({
+    //             replacementFrequency: '5'
+    //         })
+    //     }
+    // }
 
     // //Hourly Rate Handler
     // hourlyRateHandler = (event) => {
