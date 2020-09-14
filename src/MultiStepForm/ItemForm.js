@@ -40,7 +40,8 @@ const ItemForm = ( props ) => {
                 {userInputData === "Currency" ? (
                     <>
                         {props.children}
-                        <MaskedInput mask={currencyMask} id={props.id} className={props.className} onChange={props.change} />
+                        <MaskedInput mask={currencyMask} id={props.id} className={props.className} onChange={props.change}
+                        />
                     </>
                 ) : (
                     <>

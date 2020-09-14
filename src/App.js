@@ -5,29 +5,51 @@ import Stat from './Stat/Stat';
 import Total from './Stat/Total';
 import SignUp from './SignUp/SignUp';
 import Hero from './Hero/Hero';
-import Slide from './MultiStepForm/SlideInput';
+// import Slide from './MultiStepForm/SlideInput';
 import ReplacementStat from './Stat/Replacement';
 import MultiStepForm from './MultiStepForm/MultiStepForm';
 
 
 class App extends Component {
-
-  state = {
-    hourlyRate: '$0',
-    repairTime: '0',
-    saggingDoorRepairTime: '0',
-    hardwareAdjustRepairTime: '0',
-    patchFrameRepairTime: '0',
-    frameRemovalTime: '0',
-    frameInstallTime: '0',
-    replacementFrequency: '0'
+      state = {
+      hourlyRate: '$0',
+      repairTime: '0',
+      saggingDoorRepairTime: '0',
+      hardwareAdjustRepairTime: '0',
+      patchFrameRepairTime: '0',
+      frameRemovalTime: '0',
+      frameInstallTime: '0',
+      replacementFrequency: '0'
   }
 
-  hourlyRateHandler = (event) => {
-    this.setState({
-      hourlyRate: event.target.value
-    })
-  }
+//   //Use the submitted data to set the state
+//   handleChange(event) {
+//     this.setState({
+//         hourlyRate: event.target.value,
+//         saggingDoorRepairTime: event.target.value,
+//         hardwareAdjustRepairTime: event.target.value,
+//         patchFrameRepairTime: event.target.value,
+//         frameRemovalTime: event.target.value,
+//         frameInstallTime: event.target.value
+//     })
+//     if (this.props.data === 'frequency' && Number(event.target.value) === 2){
+//         this.setState({
+//             replacementFrequency: '2'
+//         })
+//     } else if (this.props.data === 'frequency' && Number(event.target.value) >= 3){
+//         this.setState({
+//             replacementFrequency: '1'
+//         })
+//     } else if (this.props.data === 'frequency' && Number(event.target.value) > 5) {
+//         this.setState({
+//             replacementFrequency: '0'
+//         })
+//     } else {
+//         this.setState({
+//             replacementFrequency: '5'
+//         })
+//     }
+// }
 
   timeInputHandler = (event) => {
     this.setState({
@@ -101,47 +123,47 @@ class App extends Component {
                 <h3>Do hollow metal doors stack up to Special-Lite's premium FRP/Aluminum Hybrid Doors? Just answer a few questions and see for yourself!</h3>
                 <MultiStepForm />
                 
-                {/* Hourly Rate */}
+                {/* Hourly Rate
                 <Slide data="Currency" change={this.hourlyRateHandler}>
                   <h2>What is your hourly cost of labor?</h2>
                   <h3>Enter your cost on the line below</h3>
-                </Slide>
+                </Slide> */}
 
-                {/* Sagging Door Repair Time */}
+                {/* Sagging Door Repair Time
                 <Slide data="" change={this.saggingDoorRepairTimeHandler}>
                   <h2>How much time each year do you spend repairing sagging doors?</h2>
                   <h3>Enter your time in hours on the line below</h3>
-                </Slide>
+                </Slide> */}
 
-                {/* Adjust Hardware Time */}
+                {/* Adjust Hardware Time
                 <Slide data="" change={this.hardwareAdjustRepairTimeHandler}>
                   <h2>How much time do you spend adjusting door hardware each year?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
-                </Slide>
+                </Slide> */}
                 
-                {/* Patch Frame Time */}
+                {/* Patch Frame Time
                 <Slide data="" change={this.patchFrameRepairTimeHandler}>
                   <h2>How much time do you spend repairing and patching door frames each year?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
-                </Slide>
+                </Slide> */}
 
-                {/* Frame Removal Time */}
+                {/* Frame Removal Time 
                 <Slide data="" change={this.frameRemovalTimeHandler}>
                   <h2>How long does it take to remove your existing Hollow Metal door and frame?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
-                </Slide>
+                </Slide>*/}
 
-                {/* Frame Installation Time */}
+                {/* Frame Installation Time 
                 <Slide data="" change={this.frameInstallTimeHandler}>
                   <h2>How much time does it take your team to reinstall a door and frame?</h2>
                   <h3>Enter your answer in hours on the line below</h3>
-                </Slide>
+                </Slide>*/}
 
-                {/* Replacement Frequency */}
+                {/* Replacement Frequency 
                 <Slide data="" change={this.frequencyInputHandler}>
                   <h2>How often do you replace a hollow metal door?</h2>
                   <h3>Enter your answer in years on the line below</h3>
-                </Slide>
+                </Slide>*/}
 
               </div>
           </div>
