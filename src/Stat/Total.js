@@ -48,7 +48,6 @@ const total = (props) => {
                 </div>
                 <div className="counter-label">
                     <p>{props.children}</p>
-                    <p>payoff</p>
                 </div>
             </div>
         )
@@ -62,7 +61,6 @@ const total = (props) => {
                 </div>
                 <div className="counter-label">
                     <p>{props.children}</p>
-                    <p>payoff</p>
                 </div>
             </div>
         )
@@ -77,7 +75,6 @@ const total = (props) => {
                 </div>
                 <div className="counter-label">
                     <p>{props.children}</p>
-                    <p>payoff</p>
                 </div>
             </div>
         )
@@ -109,7 +106,6 @@ const total = (props) => {
                </div>
                <div className="counter-label">
                    <p>{props.children}</p>
-                   <p>grand</p>
                </div>
            </div> 
         )
@@ -140,7 +136,6 @@ const total = (props) => {
                 </div>
                 <div className="counter-label">
                     <p>{props.children}</p>
-                    <p>grand</p>
                 </div>
             </div>
         )
@@ -168,7 +163,6 @@ const total = (props) => {
                 </div>
                 <div className="counter-label">
                     <p>{props.children}</p>
-                    <p>grand</p>
                 </div>
             </div>
         )
