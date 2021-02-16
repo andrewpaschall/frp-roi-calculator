@@ -88,6 +88,8 @@ class App extends Component {
 
     return (
       <div className="roiCalculator">
+      {/* Data Capture */}
+      <SignUp></SignUp>
 
       {/* Hero */}
       <Hero></Hero>
@@ -276,8 +278,7 @@ class App extends Component {
             </div>
         </section>
 
-        {/* Data Capture */}
-        <SignUp></SignUp>
+        
               
       </div>
     );
