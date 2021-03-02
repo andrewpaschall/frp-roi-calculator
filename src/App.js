@@ -3,11 +3,15 @@ import './Site.css';
 import './App.css';
 import Stat from './Stat/Stat';
 import Total from './Stat/Total';
-import SignUp from './SignUp/SignUp';
+// import SignUp from './SignUp/SignUp';
 import Hero from './Hero/Hero';
 import Slide from './SlideInput';
 import ReplacementStat from './Stat/Replacement';
 
+//Data Capture
+const dataCaptureScript = document.createElement('script');
+dataCaptureScript.src = "https://special-lite.activehosted.com/f/embed.php?id=1";
+document.body.appendChild(dataCaptureScript);
 
 class App extends Component {
 
@@ -88,8 +92,8 @@ class App extends Component {
 
     return (
       <div className="roiCalculator">
-      {/* Data Capture */}
-      <SignUp></SignUp>
+      {/* Data Capture
+      <SignUp></SignUp> */}
 
       {/* Hero */}
       <Hero></Hero>

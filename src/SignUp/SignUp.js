@@ -1,21 +1,41 @@
 import React from 'react';
 // import { useCookies } from 'react-cookie';
+// import Modal from 'react-modal';
 
-// const dataCaptureScript = document.createElement('script');
-// dataCaptureScript.src = "https://js.createsend1.com/javascript/copypastesubscribeformlogic.js";
+const dataCaptureScript = document.createElement('script');
+dataCaptureScript.src = "https://special-lite.activehosted.com/f/embed.php?id=1";
 // dataCaptureScript.async = true;
-// document.body.appendChild(dataCaptureScript);
+document.body.appendChild(dataCaptureScript);
 
 // const [cookies, setCookie] = useCookies(['subscribed']);
 
-const signUp = (props) => {
-  return(
-    <script src="https://special-lite.activehosted.com/f/embed.php?id=1" type="text/javascript" charSet="utf-8"></script>
-  )
-}
+// const customStyles = {
+//   content : {
+//     top : '50%',
+//     left : '50%',
+//     right : 'auto',
+//     bottom : 'auto',
+//     marginRight : '-50%',
+//     transform : 'transalte(-50%, -50%'
+//   }
+// };
+
+// Modal.setAppElement( '#root' )
 
 // const signUp = (props) => {
-//     return(
+//   return(
+//     <script src="https://special-lite.activehosted.com/f/embed.php?id=1" type="text/javascript" charSet="utf-8"></script>
+//   )
+// }
+
+const signUp = (props) => {
+    // var subtitle;
+    // const [modalIsOpen,setIsOpen] = React.useState(false);
+    // function openModal() {
+    //   setIsOpen(true);
+    // }
+    return(
+      <p>Hello</p>
 //         <section className="sign-up">
 //                 <div className="grid-container">
 //                   <h2 className="text-center">Keep in Touch</h2>
@@ -42,7 +62,7 @@ const signUp = (props) => {
 //                   </form>
 //                 </div>
 //               </section>
-//     )
-// };
+    )
+};
 
 export default signUp;
